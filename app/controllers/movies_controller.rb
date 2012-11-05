@@ -69,7 +69,7 @@ class MoviesController < ApplicationController
   
   def find_with_same_director
     puts Movie.find_by_id(params[:movie_id]).title + " "+params[:movie_id]+ " "+Movie.find_by_id(params[:movie_id]).director
-    if Movie.find_by_id(params[:movie_id]).director == nil
+    if (Movie.find_by_id(params[:movie_id]).director == nil) || (Movie.find_by_id(params[:movie_id]).director == "")
 	redirect_to '/movies' and return
     end
 
