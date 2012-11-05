@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+  def search_tmdb
+     @movies=Movie.find_in_tmdb(params[:search_terms])
+  end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -62,6 +65,16 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+  
+  def find_with_same_director
+    puts Movie.find_by_id(params[:movie_id]).title + " "+params[:movie_id]+ " "+Movie.find_by_id(params[:movie_id]).director
+    if Movie.find_by_id(params[:movie_id]).director == nil
+	redirect_to '/movies' and return
+    end
+
+    @movies = Movie.with_same_director_as(params[:movie_id])
+    render 'similar_movies'
   end
 
 end

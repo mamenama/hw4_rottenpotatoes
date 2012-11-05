@@ -1,0 +1,27 @@
+milk_movie:
+  id: 1
+  title: Milk
+  rating: R
+  release_date: 2008-01-11
+  director: Steven Spielberg
+
+food_inc_movie:
+  id: 2
+  title: Food, Inc.
+  rating: R
+  release_date: 2009-01-01
+  director: Steven Spielberg
+
+star_wars_movie:
+  id: 3
+  title: Star Wars
+  rating: PG
+  release_date: 1977-05-20
+  director: George Lucas
+
+alien_movie:
+  id: 4
+  title: Alien
+  rating: PG
+  release_date: 1977-05-20
+
